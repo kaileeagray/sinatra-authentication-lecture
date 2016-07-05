@@ -21,3 +21,9 @@
 1. build user reg process - signup form
 2. give posts to users
 3. only let them edit posts they made
+----
+
+render vs redirect
+add validation:   validates :email, :presence => true
+
+  - validation make sure user has data
