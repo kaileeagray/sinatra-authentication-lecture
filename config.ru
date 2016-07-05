@@ -4,3 +4,11 @@
 # the server will respond to requests against app built
 
 require_relative './config/environment'
+
+# mount the controller
+if ActiveRecord::Migrator.needs_migration?
+  raise 'Migrations are pending. Run 'rake db:migrate' to resolve the issue.'
+end
+
+use Rack::MethodOverride
+run ApplicationController
