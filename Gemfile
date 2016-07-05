@@ -12,3 +12,4 @@ gem 'pry'
 gem 'sinatra-activerecord'
 gem 'require_all'
 # helps load dependencies
+gem 'shotgun'
