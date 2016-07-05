@@ -27,3 +27,7 @@ render vs redirect
 add validation:   validates :email, :presence => true
 
   - validation make sure user has data
+  u = User.new
+  u.save
+  u.errors.full_messages
+  returns ["password can't be blank", "username can't be blank"]
