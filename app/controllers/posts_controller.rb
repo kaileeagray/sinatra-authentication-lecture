@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     if !logged_in?
       redirect "/login" # redirect if not logged in
     else
+      post = Post.find(params[:id])
       "An edit new post form"
     end
   end

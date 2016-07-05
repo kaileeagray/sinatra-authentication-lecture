@@ -13,3 +13,4 @@ gem 'sinatra-activerecord'
 gem 'require_all'
 # helps load dependencies
 gem 'shotgun'
+gem 'bcrypt', '~> 3.1.7'
