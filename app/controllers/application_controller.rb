@@ -11,16 +11,25 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    # only put data in session
     session[:greeting] = "Hello World"
     response.set_cookie 'credit_amount', '100'
     "Hello World!"
   end
 
-  get '/remember' do
-    # this maintains state with cookie
-    # this is bad! do not put data in cookie
-    # only issue a session id for the data stored on our server
-    "You have #{request.cookies['credit_amount']} left"
+  helpers do
+    def logged_in?
+      !!session[:email]
+    end
+
+    def login(email)
+      session[:email] = email
+    end
+
+    def logout!
+      session.clear
+    end
   end
+
 
 end
